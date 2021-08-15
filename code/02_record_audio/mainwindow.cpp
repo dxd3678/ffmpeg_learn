@@ -99,7 +99,7 @@ void MainWindow::on_Record_audio_clicked()
         }
     }
 }
-
+// 当程序运行时, 主窗口无响应，导致关闭录音的按钮无法点击。
 void MainWindow::on_Record_audio_2_clicked()
 {
     Record_Flag = false;
