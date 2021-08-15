@@ -29,3 +29,19 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32{
+    FFMPEG_HOME = ../../ffmpeg-4.3.2-2021-02-27-full_build-shared
+
+    INCLUDEPATH += $${FFMPEG_HOME}/include
+
+    LIBS += -L$${FFMPEG_HOME}/lib \
+            -lavcodec \
+            -lavdevice \
+            -lavfilter \
+            -lavformat \
+            -lavutil \
+            -lpostproc \
+            -lswresample \
+            -lswscale
+}
